@@ -1,9 +1,9 @@
-# nQueensIA
+# Problema das n - Rainhas
 
-## UFU/FACOM
-## Disciplina: IA
-## Primeiro Trabalho de Programação
-### Descrição
+### UFU/FACOM
+### Disciplina: IA
+### Primeiro Trabalho de Programação
+## Descrição
 O Objetivo do trabalho consiste em obter uma solução computacional para o problema
 das n-rainhas utilizando os seguintes algoritmos:
 - Busca em Profundidade Iterativa;
