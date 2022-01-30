@@ -5,7 +5,7 @@ import sys
 # -- Standard implementation of Simulated Annealing Algorithm -- #
 
 # You've got to tune these parameters carefully before you can make it work
-def exp_schedule(k=20, lam=0.01, limit=100000):
+def exp_schedule(k=50, lam=0.001, limit=1000000):
     # One possible schedule function for simulated annealing
     # Parameters must be tuned according to the size of the input
     # Tuned for 50 * 50 N Queens Problem
@@ -17,7 +17,7 @@ def exp_schedule(k=20, lam=0.01, limit=100000):
 
 # SA: A version of stochastic hill climbing where downhill moves are allowed
 def simulated_annealing(problem, schedule=exp_schedule()):
-    current = problem.initial().state
+    current = problem.initial2().state
     currVal = problem.value(current)
     for t in range(sys.maxsize):
         T = schedule(t)

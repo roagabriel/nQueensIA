@@ -4,9 +4,9 @@ from sre_parse import State
 # Hill Climbing in continuous space is Gradient Descent
 def hill_climbing(problem):
     # Keep choosing the neighbour with highest value until no neighbor is better
-    current = problem.initial()
+    current = problem.initial2()
     while True:
-        neighbours = problem.children(current)
+        neighbours = problem.children2(current)
         if not neighbours:
             break
         neighbour = max(neighbours,
@@ -16,8 +16,8 @@ def hill_climbing(problem):
         current = neighbour
     return current.state
 
-def random_restart(problem, limit = 10):
-    state = problem.initial().state
+def random_restart(problem, limit = 50):
+    state = problem.initial2().state
     cnt = 0
     while problem.goal_test(state) == False and cnt < limit:
         state = hill_climbing(problem)

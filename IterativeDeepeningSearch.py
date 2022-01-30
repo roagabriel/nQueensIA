@@ -9,7 +9,7 @@ cutoff  = State('cutoff', None, math.inf)
 #implementation of depth limited portion of id
 def depth_limited(problem, depth):
     queue = LifoQueue()
-    initial = problem.initial()
+    initial = problem.initial1()
     queue.put(initial)
     
     while True:
@@ -20,13 +20,12 @@ def depth_limited(problem, depth):
         if problem.goal_test(current.state) == True:
             return current
         elif current.depth is not depth:
-            for successor in problem.children(current):
+            for successor in problem.children1(current):
                 queue.put(successor)
 
-# Hill Climbing in continuous space is Gradient Descent
+
 def iterative_deepening_search(problem):
-    # Keep choosing the neighbour with highest value until no neighbor is better
-    limit = 12
+    limit = 20
     depth = 0
     result = None
     while result == None:
